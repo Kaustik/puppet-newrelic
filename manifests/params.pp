@@ -53,7 +53,10 @@ class newrelic::params {
         }
         'Ubuntu': {
           case $::operatingsystemrelease {
-            /^(10|12)/: {
+            /^(16)/: {
+              $newrelic_php_conf_dir  = ['/etc/php/7.0/mods-available']
+            }
+            /^(10|12|14)/: {
               $newrelic_php_conf_dir  = ['/etc/php5/conf.d']
             }
             default: {
