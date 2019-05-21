@@ -36,7 +36,7 @@ class newrelic::params {
             /^8/: {
               case $::phpversion {
                 /^7/: {
-                  $newrelic_php_conf_dir  = ['/etc/php/7.0/mods-available']
+                  $newrelic_php_conf_dir  = ['/etc/php/7.2/mods-available']
                 }
                 default:{
                   $newrelic_php_conf_dir  = ['/etc/php5/mods-available']
@@ -54,7 +54,7 @@ class newrelic::params {
         'Ubuntu': {
           case $::operatingsystemrelease {
             /^(16)/: {
-              $newrelic_php_conf_dir  = ['/etc/php/7.0/mods-available']
+              $newrelic_php_conf_dir  = ['/etc/php/7.2/mods-available']
             }
             /^(10|12|14)/: {
               $newrelic_php_conf_dir  = ['/etc/php5/conf.d']
