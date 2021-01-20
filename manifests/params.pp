@@ -55,7 +55,6 @@ class newrelic::params {
           case $::operatingsystemrelease {
             /^(16|18|20)/: {
               $config_dir = hiera('php::config_dir')
-              notice($config_dir)
               $newrelic_php_conf_dir  = ["${config_dir}/mods-available"]
             }
             /^(10|12|14)/: {
